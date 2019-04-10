@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+            name="viewmodels"
+            type="ph.com.southstardrug.www.southstardrug.viewmodels.LogInViewModel"/>
+    <variable
+            name="views"
+            type="ph.com.southstardrug.www.southstardrug.views.LogInView"/>
+</data>
+<android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dirtyWhite"
+        tools:context="ph.com.southstardrug.www.southstardrug.module.LogInActivity">
+
+    <EditText
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:textSize="14sp"
+            android:padding="15dp"
+            android:id="@+id/txtEmail"
+            android:text="@={viewmodels.username}"
+            android:background="@drawable/default_textfield"
+            android:hint="@string/email_address" android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.514"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <EditText
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:padding="15dp"
+                android:ems="10"
+                android:text="@={viewmodels.userpass}"
+                android:textSize="14sp"
+                android:id="@+id/txtPassword"
+                android:background="@drawable/default_textfield"
+                android:hint="@string/password"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEmail"
+                app:layout_constraintHorizontal_bias="0.518"
+                android:layout_marginTop="4dp"/>
+
+    <Button
+            android:background="@drawable/login_button"
+            android:textColor="@android:color/white"
+            android:text="LOGIN"
+            android:clickable="false"
+            android:layout_width="280dp"
+            android:layout_height="41dp"
+            android:onClick="@{(v)->views.logIn()}"
+            android:id="@+id/button2" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtPassword"
+            app:layout_constraintBottom_toTopOf="@+id/btnReg" app:layout_constraintHorizontal_bias="0.518"/>
+    <Button
+
+            android:background="@drawable/login_button"
+            android:textColor="@android:color/white"
+            android:text="REGISTER"
+            android:layout_width="280dp"
+            android:onClick="@{(v)->views.register()}"
+            android:layout_height="41dp"
+            android:id="@+id/btnReg" android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/button2" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.518"/>
+    <TextView
+            android:text="Forgot Password?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.799"
+            android:textStyle="italic" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnReg" app:layout_constraintVertical_bias="0.02"/>
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="150dp" app:srcCompat="@drawable/ssd_login_icon_two"
+            android:id="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="60dp"/>
+</android.support.constraint.ConstraintLayout>
+</layout>

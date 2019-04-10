@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+                name="viewmodels"
+                type="ph.com.southstardrug.www.southstardrug.viewmodels.RegisterViewModel"/>
+        <variable
+                name="views"
+                type="ph.com.southstardrug.www.southstardrug.views.RegisterView"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            tools:context="ph.com.southstardrug.www.southstardrug.module.RegisterActivity"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:background="@color/dirtyWhite">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbarThumbVertical="@color/dirtyWhite"
+                android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.0">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          android:gravity="center"
+            >
+                <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="146dp" app:srcCompat="@drawable/ssd_login_icon_two"
+                        android:id="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:layout_marginTop="60dp"/>
+                <EditText
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:ems="10"
+                        android:textSize="14sp"
+                        android:padding="15dp"
+                        android:id="@+id/txtfieldUname"
+                        android:text="@={viewmodels.username}"
+                        android:background="@drawable/default_textfield"
+                        android:hint="@string/username" android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView2"/>
+
+                <EditText
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:ems="10"
+                        android:textSize="14sp"
+                        android:padding="15dp"
+                        android:id="@+id/txtfieldUemail"
+                        android:text="@={viewmodels.useremail}"
+                        android:background="@drawable/default_textfield"
+                        android:hint="@string/email_address"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        app:layout_constraintTop_toBottomOf="@+id/txtfieldUname"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                />
+                <EditText
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:ems="10"
+                        android:textSize="14sp"
+                        android:padding="15dp"
+                        android:id="@+id/txtfieldUpass"
+                        android:text="@={viewmodels.userpass}"
+                        android:background="@drawable/default_textfield"
+                        android:hint="@string/password"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        app:layout_constraintTop_toBottomOf="@+id/txtfieldUemail"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                />
+                <EditText
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:ems="10"
+                        android:textSize="14sp"
+                        android:padding="15dp"
+                        android:id="@+id/txtfieldUcpass"
+                        android:text="@={viewmodels.userconfirmpass}"
+                        android:background="@drawable/default_textfield"
+                        android:hint="@string/confirm_password"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        app:layout_constraintTop_toBottomOf="@+id/txtfieldUpass"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+                <Button
+                        android:text="Register"
+                        android:layout_width="280dp"
+                        android:layout_height="45dp"
+                        android:id="@+id/btnRegister"
+                        android:onClick="@{(v)->views.register()}"
+                        android:background="@drawable/login_button"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.511" android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/txtfieldUcpass"
+
+                />
+                <TextView
+                        android:text="@string/already_have_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="italic"
+                        android:onClick="@{(v)->views.backtoLogin()}"
+                        android:id="@+id/textView4" android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/btnRegister" app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.799"
+
+                        android:layout_gravity="end" android:layout_marginEnd="60dp"/>
+            </LinearLayout>
+        </ScrollView>
+
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

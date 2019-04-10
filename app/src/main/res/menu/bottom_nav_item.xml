@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/itemPromo"
+            android:icon="@mipmap/ic_promo"
+            android:title="@string/promotion_title"/>
+    <item
+            android:id="@+id/itemCard"
+            android:icon="@mipmap/ic_branches"
+            android:title="@string/branches_title"/>
+    <item
+            android:id="@+id/itemProfile"
+            android:icon="@mipmap/ic_profile"
+            android:title="@string/profile_title"/>
+    <item
+            android:id="@+id/itemNotification"
+            android:icon="@mipmap/ic_notification"
+            android:title="@string/notification_title"/>
+    <item
+            android:id="@+id/itemMore"
+            android:icon="@mipmap/ic_more"
+            android:title="@string/more_title"/>
+</menu>
